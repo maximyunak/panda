@@ -1,0 +1,25 @@
+@import url(../font/stylesheet.css);
+@import url(./_null.scss);
+
+@import url(./_header.scss);
+
+// [class*="__container"] {
+//   max-width: 1400px;
+//   margin: 0 auto;
+//   @media (max-width: 1450px) {
+//     padding: 0 15px;
+//   }
+// }
+
+body {
+  overflow-x: hidden;
+}
+
+main {
+  max-width: 1080px;
+  padding: 0 15px;
+  background: url(/temple/images/app/Light.png) no-repeat;
+  background-size: cover;
+  color: #fff;
+  height: 1944px;
+}
