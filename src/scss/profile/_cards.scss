@@ -1,29 +1,49 @@
 .cards {
   margin-top: 80px;
-  display: none;
   &__container {
-  }
-
-  &__center {
     position: relative;
   }
-  &__swiper {
+
+  .swiper {
     margin-top: 50px;
-    overflow: hidden;
+    display: flex !important;
+    justify-content: space-between !important;
 
     .swiper-slide {
-      width: 366px !important;
-
-      img {
-        z-index: -1;
+      @media (max-width: 820px) {
+        display: flex !important;
+        flex-direction: column !important;
+        // justify-content: center !important;
+        align-items: center !important;
       }
     }
   }
-  .swiper-wrapper {
+  .btns {
+    .next,
+    .prev {
+      position: absolute;
+      top: 55%;
+      z-index: 99;
+    }
+    .next {
+      right: -33px;
+    }
+    .prev {
+      left: -57px;
+    }
+    @media (max-width: 900px) {
+      display: none;
+    }
   }
 
   &__card-info {
     padding: 35px;
+    background: #1f1f1f;
+    border-radius: 32px;
+    margin-top: -25px;
+    position: relative;
+    max-width: 367px !important;
+
     h1 {
       font-size: 29px;
       font-weight: 600;
@@ -41,11 +61,22 @@
       background-color: #7300ff;
       padding: 20px;
       border-radius: 16px;
+      font-size: 22px;
+      font-weight: 500;
     }
-    background: #1f1f1f;
-    border-radius: 32px;
-    margin-top: -20px;
-    position: relative; /* Делаем `.__card-info` позиционируемым */
+
+    @media (max-width: 500px) {
+      width: 100%;
+      h1 {
+        font-size: 20px;
+      }
+      h3 {
+        font-size: 14px;
+      }
+      button {
+        padding: 10px;
+      }
+    }
 
     &::before {
       /* Создаем псевдоэлемент */
@@ -53,7 +84,9 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%; /* Ширина псевдоэлемента */
+
+      max-width: 367px !important;
+      // width: 100%; /* Ширина псевдоэлемента */
       height: 100%; /* Высота псевдоэлемента */
       background-color: #1f1f1f; /* Цвет фона */
       border-radius: 32px; /* Скругление */
@@ -69,6 +102,7 @@
     transform: translateY(-50%);
     display: flex;
     gap: 500px;
+    z-index: 999 !important;
 
     img {
       cursor: pointer;
@@ -88,4 +122,14 @@
   font-family: 'Druk Cyr';
   text-align: center;
   text-transform: uppercase;
+
+  @media (max-width: 700px) {
+    font-size: 50px;
+  }
+  @media (max-width: 550px) {
+    font-size: 40px;
+  }
+  @media (max-width: 400px) {
+    font-size: 30px;
+  }
 }

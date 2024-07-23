@@ -4,15 +4,21 @@ import '../scss/profile/profile.scss';
 import Swiper from 'swiper/bundle';
 import 'swiper/css';
 
-const swiperTitle = new Swiper('.cards__swiper', {
+const swiperTitlesd = new Swiper('.swiper', {
   // Optional parameters
   loop: true,
 
-  slidesPerView: 2,
-  spaceBetween: 70,
+  slidesPerView: 1,
+  breakpoints: {
+    820: {
+      slidesPerView: 2,
+    },
+  },
+  // slidesPerView: 1,
+  spaceBetween: 20,
   // Navigation arrows
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.next',
+    prevEl: '.prev',
   },
 });
