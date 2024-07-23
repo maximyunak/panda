@@ -1,0 +1,91 @@
+.cards {
+  margin-top: 80px;
+  display: none;
+  &__container {
+  }
+
+  &__center {
+    position: relative;
+  }
+  &__swiper {
+    margin-top: 50px;
+    overflow: hidden;
+
+    .swiper-slide {
+      width: 366px !important;
+
+      img {
+        z-index: -1;
+      }
+    }
+  }
+  .swiper-wrapper {
+  }
+
+  &__card-info {
+    padding: 35px;
+    h1 {
+      font-size: 29px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    h3 {
+      margin-top: 7px;
+      font-size: 16px;
+      color: #787878;
+      font-weight: 600;
+    }
+    button {
+      margin-top: 28px;
+      width: 100%;
+      background-color: #7300ff;
+      padding: 20px;
+      border-radius: 16px;
+    }
+    background: #1f1f1f;
+    border-radius: 32px;
+    margin-top: -20px;
+    position: relative; /* Делаем `.__card-info` позиционируемым */
+
+    &::before {
+      /* Создаем псевдоэлемент */
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%; /* Ширина псевдоэлемента */
+      height: 100%; /* Высота псевдоэлемента */
+      background-color: #1f1f1f; /* Цвет фона */
+      border-radius: 32px; /* Скругление */
+      z-index: -1; /* Устанавливаем псевдоэлемент позади контента */
+    }
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    position: absolute;
+    z-index: 23;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 500px;
+
+    img {
+      cursor: pointer;
+      min-width: 37px !important;
+    }
+  }
+
+  .swiper-button-next {
+    right: -72px;
+  }
+  .swiper-button-prev {
+    left: -72px;
+  }
+}
+.title {
+  font-size: 61px;
+  font-family: 'Druk Cyr';
+  text-align: center;
+  text-transform: uppercase;
+}
