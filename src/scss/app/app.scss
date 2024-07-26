@@ -7,6 +7,7 @@
 [class*='__container'] {
   max-width: 800px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 body {
@@ -18,13 +19,20 @@ body {
 main {
   position: relative;
   max-width: 1080px;
-  padding: 0 15px;
   background: url(/temple/images/app/Light.png) no-repeat center;
   background-size: cover;
   color: #fff;
   // height: 1944px;
 
+  padding-bottom: 120px;
   margin: 0 auto;
+
+  @media (max-width: 920px) {
+    padding-bottom: 190px;
+  }
+  @media (max-width: 550px) {
+    padding-bottom: 170px;
+  }
 }
 
 .rotate {
@@ -61,4 +69,16 @@ main {
   @media (max-width: 700px) {
     width: 3px;
   }
+}
+
+.profile.none {
+  display: none;
+}
+
+.main.none {
+  display: none;
+}
+
+.referals.none {
+  display: none;
 }
