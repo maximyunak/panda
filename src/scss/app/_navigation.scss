@@ -7,6 +7,7 @@
   text-align: center;
   margin-top: 120px;
 
+  // display: none;
   position: fixed;
   bottom: 20px;
   width: 100%;
@@ -52,7 +53,9 @@
       height: 80px;
       width: 80px;
       border-radius: 16px;
-
+      &#profile img {
+        height: 30px;
+      }
       img {
         width: 30px;
       }
@@ -71,7 +74,9 @@
       width: 60px;
 
       border-radius: 8px;
-
+      &#profile img {
+        height: 30px;
+      }
       img {
         width: 30px;
       }
@@ -89,7 +94,9 @@
     &__item {
       height: 40px;
       width: 40px;
-
+      &#profile img {
+        height: 20px;
+      }
       img {
         width: 20px;
       }

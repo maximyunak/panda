@@ -1,0 +1,196 @@
+.notification-up {
+  opacity: 0;
+  visibility: hidden;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  input {
+    margin-top: clamp(0.625rem, -1.875rem + 12.5vw, 1.25rem);
+    padding: 10px 20px;
+    border-radius: 8px;
+    width: 100%;
+    border: 2px solid #b4b4b4;
+    font-size: 16px;
+    font-weight: 600;
+    &::placeholder {
+      font-size: 16px;
+      font-weight: 600;
+      color: #b4b4b4;
+    }
+  }
+
+  p {
+    margin-top: 2px;
+    font-size: clamp(0.75rem, 0.417rem + 1.67vw, 0.875rem);
+    color: #b4b4b4;
+    letter-spacing: 0.1px;
+  }
+
+  button {
+    margin-top: clamp(0.625rem, -1.875rem + 12.5vw, 1.25rem);
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;
+    background-color: #7300ff;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
+
+.notification {
+  background-color: #fff;
+  // padding: 100px;
+  width: 90%;
+  border-radius: 16px;
+  padding: 20px 15px;
+
+  position: fixed;
+  z-index: 999;
+
+  transition: 0.3s;
+  left: 50%;
+  // bottom: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  &__back {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    h4 {
+      font-size: 26px;
+      font-weight: 500;
+      color: #b4b4b4;
+    }
+    @media (max-width: 450px) {
+      h4 {
+        font-size: 18px;
+      }
+      img {
+        width: 20px;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 48px;
+    font-weight: 500;
+    margin-top: clamp(0.625rem, -1.875rem + 12.5vw, 1.25rem);
+    @media (max-width: 450px) {
+      font-size: clamp(1.563rem, 0.313rem + 6.25vw, 1.875rem);
+      font-weight: bold;
+    }
+  }
+
+  &__variants {
+    display: flex;
+    gap: clamp(0.313rem, -2.188rem + 12.5vw, 1.25rem);
+    justify-content: space-between;
+
+    margin-top: clamp(0.625rem, -1.875rem + 12.5vw, 1.25rem);
+    div {
+      display: flex;
+      background-color: #d5d5d5;
+      gap: 4px;
+      border-radius: 8px;
+      width: 100%;
+      padding: 10px 5px;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 30px;
+        @media (max-width: 400px) {
+          width: 20px;
+        }
+      }
+      h4 {
+        font-size: clamp(0.813rem, -0.021rem + 4.17vw, 1.125rem);
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.red {
+  color: #e42828;
+  font-weight: 600;
+  font-size: calc(clamp(1.063rem, -0.938rem + 10vw, 1.563rem) + 3px);
+}
+
+.notification-warning {
+  opacity: 0;
+  visibility: hidden;
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  .main-text {
+    margin-top: 5px;
+    max-width: 500px;
+    font-size: clamp(1.063rem, -0.938rem + 10vw, 1.563rem);
+    font-weight: 600;
+    color: #2f2f2f;
+    line-height: calc(clamp(1.063rem, -0.938rem + 10vw, 1.563rem) + 2px);
+  }
+}
+
+.notification-info {
+  opacity: 0;
+  visibility: hidden;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .info-ul {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    li {
+      font-size: clamp(0.875rem, -0.125rem + 5vw, 1.125rem);
+      font-weight: 600;
+      position: relative; /* Позиционируем элемент */
+      padding-left: 15px;
+
+      &::before {
+        content: ''; /* Создание псевдоэлемента */
+        position: absolute; /* Абсолютное позиционирование */
+        left: 5px; /* Отступ слева на 5 пикселей */
+        top: 10px; /* Вертикальное центрирование */
+        // transform: translateY(-50%); /* Дополнительное центрирование */
+        width: 5px; /* Ширина точки */
+        height: 5px; /* Высота точки */
+        background-color: black; /* Цвет точки */
+        border-radius: 50%; /* Закругление для создания круга */
+      }
+    }
+  }
+}
+
+.blue {
+  color: #1f73cf;
+}
+
+.bg {
+  width: 100vw !important;
+  min-height: 100vh !important;
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 9999999999;
+  transition: 0.3s;
+
+  &.active {
+    // background-color: #00000090;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    opacity: 1;
+    visibility: visible;
+  }
+}

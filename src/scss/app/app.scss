@@ -4,6 +4,8 @@
 @import url(./_header.scss);
 @import url(./_navigation.scss);
 
+@import url(./_notifications.scss);
+
 [class*='__container'] {
   max-width: 800px;
   margin: 0 auto;
@@ -14,6 +16,10 @@ body {
   overflow-x: hidden;
   background-color: #282828;
   font-family: 'Montserrat';
+
+  &.active {
+    overflow-y: hidden;
+  }
 }
 
 main {
@@ -31,6 +37,7 @@ main {
     padding-bottom: 190px;
   }
   @media (max-width: 550px) {
+    padding: 10px;
     padding-bottom: 170px;
   }
 }
@@ -81,4 +88,19 @@ main {
 
 .referals.none {
   display: none;
+}
+
+body {
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-appearance: none;
+  width: 11px; /* Ширина всего элемента навигации */
+  background: #404040;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  width: 18px;
+  background: #646464;
 }
